@@ -1,14 +1,17 @@
 const express = require('express');
-const path = require('node:path')
+const path = require('node:path');
+const hbs = require('hbs');
 const app = express();
 
-const public = path.join(__dirname, 'public');
+app.set('view engine', 'hbs');
+app.set('views', path.join(__dirname, './views'));
+const publicDir = path.join(__dirname, './public');
 
-app.set('views', public);
-app.use(express.static(public));
+// Rota pública
+app.use(express.static(publicDir));
 
-app.use('/', require('./routes/public'))
+app.use('/', require('./routes/public'));
 
 app.listen(3000, () => {
   console.log('Active on port 3000');
-})
+});
