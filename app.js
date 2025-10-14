@@ -1,19 +1,23 @@
 const express = require('express');
 const path = require('node:path');
-const hbs = require('hbs');
 const app = express();
 const dotenv = require('dotenv');
 dotenv.config({path: './.env'});
 
 app.set('view engine', 'hbs');
-app.set('views', path.join(__dirname, './views'));
-const publicDir = path.join(__dirname, './public');
 
-// Rota pública
+// Public Route
+const publicDir = path.join(__dirname, './public');
 app.use(express.static(publicDir));
 
+// Views
+app.set('views', path.join(__dirname, './views'));
+
+// JSON interpreter
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
+
 app.use('/', require('./routes/public'));
-app.use('/db', require('./mongo'))
 
 app.listen(3000, () => {
   console.log('Active on port 3000');

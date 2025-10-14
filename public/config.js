@@ -12,9 +12,9 @@ export const config = {
     innerHTML: `<h1>Comentaries Blog</h1>
       <nav>
         <ul>
-          <li><a href="">Home</a></li>
-          <li><a href="">Login</a></li>
-          <li><a href="">Register</a></li>
+          <li><a href="/">Home</a></li>
+          <li><a href="/login">Login</a></li>
+          <li><a href="/register">Register</a></li>
         </ul>
       </nav>`,
 

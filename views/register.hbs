@@ -8,12 +8,22 @@
   <link rel="stylesheet" href="/index.css">
 </head>
   <body>
-    <header>
-      <h1>Comentaries Blog</h1>
-      <nav>
-        
-      </nav>
-    </header>
+    <form action="/auth/register" method="post" autocomplete="off">
+      <div>
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name" placeholder="FelipeTetra" required>
+      </div>
+      <div>
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" placeholder="favourite@email.com" required>
+      </div>
+      <div>
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" placeholder="1234" required>
+      </div>
+      <button type="submit">SEND</button>
+    </form>
+    <p>{{message}}</p>
     <script type="module">
       import global, { config } from "/config.js";
       global();
