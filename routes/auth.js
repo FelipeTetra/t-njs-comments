@@ -47,7 +47,7 @@ router.post('/register', async (req, res) => {
     secure: false,
     maxAge: 3600000
   });
-  return res.render('register', { message: "Sucess!"}); 
+  return res.redirect('/register');
 });
 
 router.post('/login', async (req, res) => {
@@ -80,7 +80,7 @@ router.post('/login', async (req, res) => {
     maxAge: 3600000
   });
 
-  return res.render('login', { message: `Logged with ${emailExists.name}`});
+  return res.redirect('/login');
 });
  
 module.exports = router;

@@ -7,7 +7,8 @@ const users = new mongoose.Schema({
 });
 
 const comments = new mongoose.Schema({
-  userid: { type: String, required: true, maxLenght: 225 },
+  name: { type: String, required: true, maxLenght: 20 },
+  email: { type: String, required: true, maxLenght: 100 },
   message: { type: String, required: true, maxLenght: 6000 }
 })
 

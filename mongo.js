@@ -24,8 +24,12 @@ module.exports.getEmail = async function (email) {
   return await users.findOne({ email: email });
 };
 
-module.exports.newComment = async function (userid, message) {
-  const register = new comments({ userid: userid, message: message });
+module.exports.getComments = async function () {
+  return await comments.find()
+};
+
+module.exports.newComment = async function (name, email, message) {
+  const register = new comments({ name: name, email: email, message: message });
   await register.save();
 }
 

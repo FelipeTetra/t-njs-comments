@@ -28,7 +28,6 @@ export const config = {
 }
 
 export default (body = document.body, head = document.head) => {
-  console.log('testing');
   body.prepend(config.header.hElement());
   head.prepend(config.header.css());
 }
