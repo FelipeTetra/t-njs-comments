@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-
+const users = require('./userschema');
 require('dotenv').config();
 
 module.exports = async function () {
@@ -15,8 +15,12 @@ module.exports = async function () {
 };
 
 module.exports.include = async function (name, email, password) {
-  const register = new usersClone({ name: name, email: email, password: password });
+  const register = new users({ name: name, email: email, password: password });
   await register.save();
+}
+
+module.exports.getEmail = async function (email) {
+  return await users.findOne({ email: email });
 }
 
 // include('Haruki', 'hk@test.com', '1234');
