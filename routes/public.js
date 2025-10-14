@@ -1,22 +1,32 @@
 const express = require('express');
 const router = express.Router();
+const jwt = require('jsonwebtoken');
+
+function midleCheck(req, res, page) {
+  const token = req.cookies.token;
+  if(!token){
+    return res.render(page, {logged: false});
+  } else if (!jwt.tokenV(token)) {
+    res.clearCookie('token');
+    return res.render(page, {logged: false});
+  };
+  return res.render(page, {logged: true});
+}
+
 
 router.get('/', (req, res) => {
-  res.render('index');
+  midleCheck(req, res, 'index');
 });
 
 router.get('/login', (req, res) => {
-  res.render('login');
+  midleCheck(req, res, 'login');
 });
 
 router.get('/register', (req, res) => {
-  res.render('register');
+  midleCheck(req, res, 'register');
 });
 
-// router.get('/auth/register', (req, res) => {
-//   console.log("Acesso");
-// })
-
-router.use('/auth', require('./auth'))
+router.use('/auth', require('./auth'));
+router.use('/comment', require('./comment'));
 
 module.exports = router;

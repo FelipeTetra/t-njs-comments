@@ -8,26 +8,30 @@
   <link rel="stylesheet" href="/index.css">
 </head>
   <body>
-    <form action="/auth/register" method="post" autocomplete="off">
-      <div>
-        <label for="name">Name</label>
-        <input type="text" name="name" id="name" placeholder="FelipeTetra" required>
-      </div>
-      <div>
-        <label for="email">Email</label>
-        <input type="email" name="email" id="email" placeholder="felipe@domingues.dev" required>
-      </div>
-      <div>
-        <label for="password">Password</label>
-        <input type="password" name="password" id="password" placeholder="1234" required>
-      </div>
-      <div>
-        <label for="passwordConfirm">Confirm your password</label>
-        <input type="password" name="passwordConfirm" id="passwordConfirm" placeholder="1234" required>
-      </div>
-      <button type="submit">SEND</button>
-    </form>
-    <p>{{message}}</p>
+    {{#if logged}}
+    <p>You are already logged</p>
+      {{else}}
+      <form action="/auth/register" method="post" autocomplete="off">
+        <div>
+          <label for="name">Name</label>
+          <input type="text" name="name" id="name" placeholder="FelipeTetra" required>
+        </div>
+        <div>
+          <label for="email">Email</label>
+          <input type="email" name="email" id="email" placeholder="felipe@domingues.dev" required>
+        </div>
+        <div>
+          <label for="password">Password</label>
+          <input type="password" name="password" id="password" placeholder="1234" required>
+        </div>
+        <div>
+          <label for="passwordConfirm">Confirm your password</label>
+          <input type="password" name="passwordConfirm" id="passwordConfirm" placeholder="1234" required>
+        </div>
+        <button type="submit">SEND</button>
+      </form>
+      <p>{{message}}</p>
+    {{/if}}
     <script type="module">
       import global, { config } from "/config.js";
       global();

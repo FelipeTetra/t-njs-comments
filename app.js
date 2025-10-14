@@ -1,10 +1,10 @@
 const express = require('express');
 const path = require('node:path');
+const cookie = require('cookie-parser');
 const app = express();
-const dotenv = require('dotenv');
-dotenv.config({path: './.env'});
 
 app.set('view engine', 'hbs');
+app.use(cookie());
 
 // Public Route
 const publicDir = path.join(__dirname, './public');

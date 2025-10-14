@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
-const users = require('./userschema');
-require('dotenv').config();
+const users = require('./shcemas');
+const { comments } = require('./shcemas');
+require('dotenv').config({path: './.env'});
 
 module.exports = async function () {
   try {
@@ -22,5 +23,10 @@ module.exports.include = async function (name, email, password) {
 module.exports.getEmail = async function (email) {
   return await users.findOne({ email: email });
 };
+
+module.exports.newComment = async function (userid, message) {
+  const register = new comments({ userid: userid, message: message });
+  await register.save();
+}
 
 // include('Haruki', 'hk@test.com', '1234');

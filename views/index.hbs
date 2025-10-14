@@ -7,6 +7,15 @@
   <title>Index</title>
 </head>
   <body>
+    {{#if logged}}
+      <form action="/comment/new" method="post">
+        <div>
+          <label for="comment"></label>
+          <textarea name="comment" id="comment"></textarea>
+        </div>
+        <button type="submit">SEND</button>
+      </form>
+    {{/if}}
     <script type="module">
       import global, { config } from "/config.js";
       global();
