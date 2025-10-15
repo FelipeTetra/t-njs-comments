@@ -10,12 +10,20 @@
     {{#if logged}}
       <form action="/comment/new" method="post">
         <div>
-          <label for="comment"></label>
+          <label for="comment">Create a new comment</label>
           <textarea name="comment" id="comment"></textarea>
         </div>
         <button type="submit">SEND</button>
       </form>
     {{/if}}
+    <table width="100%" border="1">
+      <thead>
+        <th>Name</th>
+        <th>Post</th>
+      </thead>
+      <tbody id="tb">
+      </tbody>
+    </table>
     <script type="module" src="/comments.js"></script>
   </body>
 </html>
