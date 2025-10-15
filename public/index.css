@@ -1,0 +1,82 @@
+form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 6px;
+  padding: 30px 120px 0 120px;
+  box-sizing: border-box;
+}
+
+form div {
+  display: flex;
+  flex-direction: column;
+}
+
+form div label {
+  text-transform: uppercase;
+  font: 600 2rem "Arial";
+  text-align: center;
+  letter-spacing: 6px;
+}
+
+textarea {
+  resize: none;
+  height: 30vh;
+  font-size: 1.5rem;
+  text-align: center;
+  border-radius: 6px;
+}
+
+textarea:focus {
+  border: 3px solid #fff7d1;
+  outline: 2px solid #f3cd12;
+}
+
+textarea::placeholder {
+  display: inline;
+  position: absolute;
+  right: 6px;
+  bottom: 3px;
+  font-size: 1rem;
+}
+
+form button {
+  border-radius: 4px;
+  background-color: transparent;
+  font-weight: 700;
+  letter-spacing: 10px;
+  border-style: solid;
+  font-size: 1.8rem;
+  cursor: pointer;
+  background-color: #f5fffb;
+}
+
+form button:hover {
+  transition: ease-in .3s;
+  background-color: #cdffdf;
+}
+
+h2 {
+  margin-top: 30px;
+  font: 600 2.5rem 'Arial';
+  text-transform: uppercase;
+  letter-spacing: 8px;
+}
+
+table {
+  width: calc(100% - 240px);
+  display: table;
+  margin: 0 120px 30px 120px;
+  border-spacing: 0;
+  border-collapse: collapse;
+  font: 600 1.5rem 'Arial';
+}
+
+table thead th {
+  border: 1px solid black;
+}
+
+table tbody td {
+  text-align: center;
+  border: 1px solid black;
+}

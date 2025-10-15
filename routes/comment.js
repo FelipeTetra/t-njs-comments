@@ -16,10 +16,10 @@ router.post('/new', async (req, res) => {
   const { comment } = req.body;
 
   if (!comment || !comment.length > 16) {
-    return res.render('index', { message: 'Place more than 16 characters' });
+    return res.render('index', { message: 'Place more than 16 characters', logged: true });
   }
   newComment(name, email, comment);
-  return res.render('index', {message: "Created!"});
+  return res.redirect('/index');
 });
 
 router.post('/get', async (req, res) => {

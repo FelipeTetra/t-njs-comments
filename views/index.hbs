@@ -5,18 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Index</title>
+  <link rel="stylesheet" href="/index.css">
 </head>
   <body>
     {{#if logged}}
       <form action="/comment/new" method="post">
         <div>
           <label for="comment">Create a new comment</label>
-          <textarea name="comment" id="comment"></textarea>
+          <textarea name="comment" id="comment" placeholder="Max 6000 characters"></textarea>
         </div>
         <button type="submit">SEND</button>
       </form>
+      {{message}}
     {{/if}}
-    <table width="100%" border="1">
+    <h2>Community comments</h2>
+    <table>
       <thead>
         <th>Name</th>
         <th>Post</th>
